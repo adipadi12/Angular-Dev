@@ -1,16 +1,10 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+import { Video } from './video/video';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  template: `
-    <h1>Hello, {{ title() }}</h1>
-
-    <router-outlet />
-  `,
-  styles: [],
+  standalone: true,
+  imports: [Video],
+  template: `<app-video></app-video>`,
 })
-export class App {
-  protected readonly title = signal('first-ng-app-inline');
-}
+export class App {}

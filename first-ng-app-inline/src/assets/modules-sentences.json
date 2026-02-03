@@ -1,0 +1,12 @@
+{
+  "module_s": [
+    "Sentence 1",
+    "Sentence 2",
+    "Sentence 3"
+  ],
+  "module_a": [
+    "Sentence A1",
+    "Sentence A2",
+    "Sentence A3"
+  ]
+}

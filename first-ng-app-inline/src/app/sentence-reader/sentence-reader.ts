@@ -6,18 +6,25 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <div style="flex:1; padding:20px;">
-      <h2>Sentence Reader</h2>
-
-      <p style="font-size:22px; min-height:80px;">
-        {{ currentSentence }}
-      </p>
-
-      <button (click)="next()">
-        {{ isLastSentence ? 'Next Module' : 'Next Sentence' }}
-      </button>
-    </div>
-  `
+  <div style="padding:20px; background:#eee; flex:1;">
+    <h2>Sentence Reader</h2>
+    <p style="font-size:18px; margin:20px 0;">{{ currentSentence }}</p>
+    <button (click)="next()" 
+    [disabled]="isLastSentence"
+    style = "padding: 8px 16px;
+           background-color: #ffffff;
+           color: #333333;
+           border: 1px solid #cccccc;
+           border-radius: 4px;
+           font-size: 16px;
+           cursor: pointer;
+           transition: all 0.2s ease;
+            "
+    >
+    Next Sentence</button>
+    <p style="margin-top:20px; color:#666;">{{ currentIndex + 1 }} / {{ sentences.length }}</p>
+  </div>
+`
 })
 export class SentenceReader implements OnChanges {
   @Input() sentences: string[] = [];
